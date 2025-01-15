@@ -9,7 +9,6 @@ import SVGDrawExample from "./components/SVGDrawExample";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import PageScrollProgress from "@/components/animation-wrappers/page-scroll-progress";
 import FileCodeDisplayModal from "@/components/ui/fileDisplayModal";
-import PYLogo from "@/components/misc/pylogo";
 import UseAnimateExample from "./hooksComponents/use-animate-example";
 import UseTransformExample from "./hooksComponents/use-transform-example";
 import MotionValueInfo from "./hooksComponents/motion-value-and-events";
@@ -27,11 +26,8 @@ const Home = () => {
             <IntroParallax />
             <PageScrollProgress>
                 <div>
-                    <div className="ml-[20px]">
+                    <div className="ml-[20px] pt-20">
                         <h1>A Practical guide through Framer Motion for PerformYard</h1>
-                        <div className="flex justify-center items-center">
-                            <PYLogo />
-                        </div>
                     </div>
                     <CardsContainer>
                         <Card className="bg-slate-900">

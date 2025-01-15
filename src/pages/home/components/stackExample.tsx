@@ -11,7 +11,7 @@ import { motion, } from "motion/react";
 
 const Stack = () => {
     const [stack, setStack] = useState<string[]>([]);
-    const [mode, setMode] = useState<'popLayout' | 'sync'>('sync');
+    const [mode, setMode] = useState<'popLayout' | 'sync'>('popLayout');
     const [duration, setDuration] = useState(0);
 
     const shuffleArray = () => {

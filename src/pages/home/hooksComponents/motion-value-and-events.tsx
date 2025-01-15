@@ -4,7 +4,7 @@ const MotionValueInfo = () => {
 
     return (<div className="flex flex-col justify-center items-center">
         <ul className="text-left gap-2 flex flex-col mb-4">
-            <li>* Motion values are immutable and can be recieved useing several hooks.</li>
+            <li>* Motion values are immutable and can be recieved using several hooks.</li>
             <li>* You can make a new one using the useMotionValue hook, or even set it to a desired css value using useMotionTemplate
             </li>
             <p className="pl-3">const x = useMotionValue(100)</p>

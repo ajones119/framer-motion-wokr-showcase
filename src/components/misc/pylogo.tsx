@@ -3,8 +3,8 @@ import {motion} from "motion/react";
 const bounce = 0.6;
 const restDelta = 0.4;
 
-const PYLogo = () => {
-    return (<div className="">
+const PYLogo = ({className = ""}: {className?: string}) => {
+    return (<div className={className}>
             <motion.svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="230" height="230" viewBox="0 0 330 230"
                 preserveAspectRatio="xMidYMid meet">

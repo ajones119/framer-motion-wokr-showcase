@@ -10,7 +10,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import PageScrollProgress from "@/components/animation-wrappers/page-scroll-progress";
 import FileCodeDisplayModal from "@/components/ui/fileDisplayModal";
 import PYLogo from "@/components/misc/pylogo";
-import SpriteSheetAnimation from "@/components/animation-wrappers/sprite";
 import UseAnimateExample from "./hooksComponents/use-animate-example";
 import UseTransformExample from "./hooksComponents/use-transform-example";
 import MotionValueInfo from "./hooksComponents/motion-value-and-events";
@@ -18,39 +17,36 @@ import LargeMultistepExample from "./components/LargeMultistep";
 import { motion } from "motion/react";
 import { useIntroAnimation } from "./utils";
 import { Button } from "@/components/ui/button";
+import IntroParallax from "./components/IntroParallax";
 
 const Home = () => {
     const {ref, startAnimation, key: animationKey} = useIntroAnimation();
 
     return (
         <motion.div ref={ref} className="w-full">
+            <IntroParallax />
             <PageScrollProgress>
                 <div>
-                    <div>
+                    <div className="ml-[20px]">
                         <h1>A Practical guide through Framer Motion for PerformYard</h1>
                         <div className="flex justify-center items-center">
-                                    <PYLogo />
-                                    <SpriteSheetAnimation
-                                        imageUrl={'/Woodcutter_walk.png'}
-                                        frameHeight={48}
-                                        frameWidth={48}
-                                        numberOfFrames={6}
-                                        heightOffset={0}
-                                    />
-                                </div>
+                            <PYLogo />
+                        </div>
                     </div>
                     <CardsContainer>
                         <Card className="bg-slate-900">
                             <CardContent>
-                                <div className="flex justify-center items-center pt-20">
+                                <div className="flex justify-center items-center p-20 flex-col gap-2">
                                     <h2 className="h-20 text-3xl">Basic Examples</h2>
+                                    <p>Here are some (mostly) inline examples of using framer motion to achieve animations. You might notice as you go throug hthese that animations can occur when the key changes, when the animate value changes, or on enter/exit. </p>
+                                    <p>Inorder to animate with framer motion, you must wrap the object in an animate.[htmlElement], typically a div.</p>
                                 </div>
                             </CardContent>
                         </Card>
                         <Card className="bg-slate-800">
                             <CardHeader>
                                 <CardTitle>Basic Inline</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Inline adjustments on a motion.div</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <BasicExample />
@@ -63,7 +59,7 @@ const Home = () => {
                         <Card className="bg-slate-700">
                             <CardHeader>
                                 <CardTitle>Animation Wrappers</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Reusable animation wrappers with gestures</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <p><AnimationWrappersExample /></p>
@@ -76,7 +72,7 @@ const Home = () => {
                         <Card className="bg-slate-600 transition-all ease-in-out duration-300">
                             <CardHeader>
                                 <CardTitle>Stack</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Reusable animation wrapper for animating enter/exit from the dom on a list</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <Stack />
@@ -89,7 +85,7 @@ const Home = () => {
                         <Card className="bg-slate-500">
                             <CardHeader>
                                 <CardTitle>Key Frames & UseAnimate</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>How can Key frames be used?</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <KeyFramesExample />
@@ -102,7 +98,7 @@ const Home = () => {
                         <Card className="bg-slate-400">
                             <CardHeader>
                                 <CardTitle>Draggable Box</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardDescription>Drag handling</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <DraggableExample />
@@ -112,7 +108,7 @@ const Home = () => {
                             </CardFooter>
                         </Card>
 
-                        <Card className="bg-slate-300">
+                        <Card className="bg-slate-400">
                             <CardHeader>
                                 <CardTitle>SVG Draw</CardTitle>
                                 <CardDescription>Card Description</CardDescription>
@@ -123,36 +119,26 @@ const Home = () => {
                         </Card>
                     </CardsContainer>
                     <CardsContainer>
-                        <Card className="bg-slate-900">
+                        <Card className="bg-slate-500">
                             <CardContent>
-                                <div className="flex justify-center items-center pt-20">
-                                    <h2 className="h-20 text-3xl">Basic Hooks</h2>
+                            <div className="flex justify-center items-center p-20 flex-col gap-2">
+                                    <h2 className="h-20 text-3xl">Basic Hook Examples</h2>
+                                    <p>Framer motion provides several useful hooks when you need to incorporate more indepth animations, or you'd like your animations to be tied to common gestures but don't want a ton of rerenders</p>
+                                    <p>Common Hooks inlude</p>
+                                    <ol>
+                                        <li>useAnimate</li>
+                                        <li>useMotionValueEvent</li>
+                                        <li>useTime</li>
+                                        <li>useScroll</li>
+                                        <li>useTransform</li>
+                                        <li>useSpring</li>
+                                        <li>useInview</li>
+                                    </ol>
+
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card className="bg-slate-900">
-                            <CardHeader>
-                                <CardTitle>UseAnimate</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <UseAnimateExample />
-                            </CardContent>
-                            <CardFooter>
-                                <FileCodeDisplayModal fileUrl={"files/use-animate-example.tsx"} />
-                            </CardFooter>
-                        </Card>
-                        <Card className="bg-slate-900">
-                            <CardHeader>
-                                <CardTitle>UseTime & UseTransform</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <UseTransformExample />
-                            </CardContent>
-                            <CardFooter>
-                                <FileCodeDisplayModal fileUrl={"files/use-transform-example.tsx"} />
-                            </CardFooter>
-                        </Card>
-                        <Card className="bg-slate-900">
+                        <Card className="bg-slate-600">
                             <CardHeader>
                                 <CardTitle>Motion Values and Events</CardTitle>
                             </CardHeader>
@@ -163,13 +149,36 @@ const Home = () => {
                                 <FileCodeDisplayModal fileUrl={"files/page-scroll-progress.tsx"} />
                             </CardFooter>
                         </Card>
+                        <Card className="bg-slate-700">
+                            <CardHeader>
+                                <CardTitle>UseAnimate</CardTitle>
+                                <CardDescription>UseAnimate can be used to select certain parts of a container to animate, and can sequence animations</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <UseAnimateExample />
+                            </CardContent>
+                            <CardFooter>
+                                <FileCodeDisplayModal fileUrl={"files/use-animate-example.tsx"} />
+                            </CardFooter>
+                        </Card>
+                        <Card className="bg-slate-800">
+                            <CardHeader>
+                                <CardTitle>UseTime & UseTransform</CardTitle>
+                                <CardDescription>UseTime can be used to manipulate an object endlessly. While UseTransform is used to affect the styling on an object with a given input range</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <UseTransformExample />
+                            </CardContent>
+                            <CardFooter>
+                                <FileCodeDisplayModal fileUrl={"files/use-transform-example.tsx"} />
+                            </CardFooter>
+                        </Card>
                         <Card className="bg-slate-900">
                             <CardHeader>
-                                <CardTitle>Hooks Can run in sequence</CardTitle>
+                                <CardTitle>Animations Can run in sequence</CardTitle>
                             </CardHeader>
                                 <Button onClick={() => startAnimation()}>start</Button>
                             <CardFooter>
-                                <FileCodeDisplayModal fileUrl={"files/page-scroll-progress.tsx"} />
                             </CardFooter>
                         </Card>
                     </CardsContainer>

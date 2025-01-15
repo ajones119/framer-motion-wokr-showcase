@@ -229,7 +229,7 @@ const LargeMultistepExample = () => {
                     position: "fixed",
                     top: 0,
     
-                    left: '25vw',
+                    left: '32vw',
                     zIndex: 200,
                     opacity: 0,
                     perspective: '400px',
@@ -267,7 +267,7 @@ const LargeMultistepExample = () => {
                     
                     </div>
                 </div>
-                <audio ref={audioRef} id="audio" muted>
+                <audio ref={audioRef} id="audio">
                 <source
                     type="audio/mpeg"
                     src="https://ia801501.us.archive.org/23/items/StarWars_20180709/Star%20Wars.mp3"

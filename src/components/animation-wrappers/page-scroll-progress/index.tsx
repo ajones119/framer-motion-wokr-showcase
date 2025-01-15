@@ -27,7 +27,7 @@ export const lumberjackImageConfig = {
     'cut': {
         imageUrl:'/Woodcutter_attack2.png',
         numberOfFrames: 6,
-        fps: 20
+        fps: 15
     }
 }
 

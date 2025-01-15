@@ -23,7 +23,9 @@ const Home = () => {
 
     return (
         <motion.div ref={ref} className="w-full">
-            <IntroParallax />
+            <div>
+                <IntroParallax />
+            </div>
             <PageScrollProgress>
                 <div>
                     <div className="ml-[20px] pt-20">

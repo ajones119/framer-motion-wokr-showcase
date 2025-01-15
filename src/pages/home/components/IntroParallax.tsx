@@ -196,6 +196,19 @@ const IntroParallax = () => {
             top: 5,
             left: 28
         },
+        {
+            src: <img src={tree} className="fill" style={{objectFit: 'cover'}} />,
+            scale: scale8,
+            top: 5,
+            left: 0
+        },
+
+        {
+            src: <img src={tree} className="fill" style={{objectFit: 'cover'}} />,
+            scale: scale8,
+            top: 7,
+            left: 19
+        },
 
         //9
         {
@@ -215,7 +228,7 @@ const IntroParallax = () => {
 
     return (
         <div className="h-[300vh] relative" ref={container}>
-            <div className="sticky top-0 h-[100vh] overflow-hidden">
+            <div className="sticky top-0 h-[100vh] left-0 w-[98.5vw] overflow-hidden">
                 
                 { pictures.map((picture, index) => 
                     <motion.div style={{scale: picture.scale}} key={index} className="w-full h-full absolute flex items-center justify-center">

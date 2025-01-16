@@ -26,6 +26,10 @@ const IntroParallax = () => {
     const scale8 = useTransform(scrollYProgress, [0,1], [1,8]);
     const scale9 = useTransform(scrollYProgress, [0,1], [1,9]);
 
+    const rotateX = useTransform(scrollYProgress, [0,1], [0, -15]);
+
+
+
     const pictures = [
 
         {
@@ -227,18 +231,17 @@ const IntroParallax = () => {
     ]
 
     return (
-        <div className="h-[300vh] relative" ref={container}>
-            <div className="sticky top-0 h-[100vh] left-0 w-[98.5vw] overflow-hidden">
-                
+        <div className="h-[400vh] relative" ref={container}>
+            <motion.div style={{rotateX}} className="sticky top-0 h-[100vh] left-0 w-[98.5vw] overflow-hidden">
                 { pictures.map((picture, index) => 
                     <motion.div style={{scale: picture.scale}} key={index} className="w-full h-full absolute flex items-center justify-center">
                         <div className="w-[25vw] h-[25vh] relative" style={{top: `${picture.top}vh`, left: `${picture.left}vw`}}>
+                            
                             {picture.src}
                         </div>
                     </motion.div>
                 )}
-                
-            </div>
+            </motion.div>
         </div>
     );
 }

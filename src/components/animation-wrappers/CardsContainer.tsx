@@ -27,10 +27,10 @@ const CardsContainer = ({children = []}: PropsWithChildren) => {
             <div ref={ref} className="w-full">
                 {
                     Children.map(children, ((child, index)=> {
-                        const targetScale = 1 - ((childrenCount - index) * 0.05);
+                        const targetScale = 1 - ((childrenCount - index) * 0.1);
 
                         return (
-                            <CardContainer progress={scrollYProgress} key={`card-${index}`} targetScale={targetScale} range={[index * (1/childrenCount), 1]} topOffset={`calc(-10% + ${index*20}px)`}>
+                            <CardContainer progress={scrollYProgress} key={`card-${index}`} targetScale={targetScale} range={[index * (1/childrenCount), 1]} topOffset={`calc(-10% + ${index*25}px)`}>
                                 {child}
                             </CardContainer>
                         )

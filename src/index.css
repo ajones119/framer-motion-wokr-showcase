@@ -18,6 +18,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .pixelate {
+    image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges; /* For Firefox */
+      image-rendering: -webkit-optimize-contrast; /* For Safari */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor; /* For older IE versions */
+  }
+}
+
+.pixelate {
+  image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges; /* For Firefox */
+    image-rendering: -webkit-optimize-contrast; /* For Safari */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* For older IE versions */
 }
 
 a {

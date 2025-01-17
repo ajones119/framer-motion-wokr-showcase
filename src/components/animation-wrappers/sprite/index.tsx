@@ -81,7 +81,7 @@ const SpriteSheetAnimation = ({
     
         return () => cancelAnimationFrame(animationId?.current); // Cleanup animation
     }, [frameWidth, frameHeight, numberOfFrames, fps, imageUrl]);
-    return <canvas ref={canvasRef} />
+    return <canvas className="" ref={canvasRef} />
     };
 
 
